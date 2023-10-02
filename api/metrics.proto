@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "./api";
+
+
+
+service Metrics {
+    rpc Option(OptionRequest) returns (OptionResponse) {}
+    rpc Add(AddRequest) returns (AddResponse) {}
+    rpc GetAvgValue(GavRequest) returns (GavResponse) {}
+}
+
+message OptionRequest {
+    int32 x = 1;
+}
+
+message OptionResponse {
+    string result = 1;
+}
+
+message AddRequest {
+    string name = 1;
+    float value = 2;
+}
+
+message AddResponse {
+    string result = 1;
+}
+
+message GavRequest {
+    string name = 1;
+}
+
+message GavResponse {
+    float result = 1;
+}
