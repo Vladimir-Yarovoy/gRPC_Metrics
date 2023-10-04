@@ -65,7 +65,7 @@ func GenerateMetrics() {
 
 func AddMetric(metricName string, value float64) {
 	now := time.Now()
-	metrics[metricName] = append(metrics[metricName], Metric{Timestamp: now, Value: value})
+	metrics[metricName] = append(metrics[metricName], Metric{Name: metricName, Value: value, Timestamp: now})
 }
 
 func GetAvgValue(metricName string) float64 {
